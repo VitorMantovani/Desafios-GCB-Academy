@@ -1,19 +1,17 @@
-function limpar(array) {
-  const limpa = [];
+const truthyAndFalsyValues = [1, "", undefined, 0, 4, "ola"];
+
+function cleanFalsyElementsFromArray(array) {
+  const cleanedArray = new Array();
+
   array.forEach((element) => {
-    if (
-      element == false ||
-      element == undefined ||
-      element == "" ||
-      element == 0 ||
-      element == null
-    ) {
-      return;
-    } else {
-      limpa.push(element);
-    }
+    element && cleanedArray.push(element);
   });
-  return limpa;
+
+  return cleanedArray;
 }
 
-console.log(limpar([1, "", undefined, 0, 4, "ola"]));
+console.log(cleanFalsyElementsFromArray(truthyAndFalsyValues));
+
+// Jeito 2
+
+// console.log(truthyAndFalsyValues.filter(Boolean));
