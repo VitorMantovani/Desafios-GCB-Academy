@@ -1,17 +1,19 @@
-function unnest(array) {
-  const clear = [];
-  array.forEach((item) => {
-    if (!(typeof item === "number")) {
-      item.forEach((listItem) => {
-        clear.push(listItem);
-      });
-    } else {
-      clear.push(item);
-    }
-  });
-  return clear;
-}
+const nestedArray = [1, "oi", [3], [4, 5]];
 
-const response = unnest([1, 2, [3], [4, 5]]);
+// function flatNestedArray(array) {
+//   const flatArray = new Array();
+//   array.forEach((element) => {
+//     !(typeof element === "number" || typeof element === "string")
+//       ? element.forEach((listItem) => flatArray.push(listItem))
+//       : flatArray.push(element);
+//   });
+//   return flatArray;
+// }
 
-console.log(response);
+// const response = flatNestedArray(nestedArray);
+
+// console.log(response);
+
+//Jeito 2
+
+console.log(nestedArray.flat());
