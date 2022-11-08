@@ -1,11 +1,14 @@
-function sliceArr(arr, num) {
-  const sliced = [];
-  for (let i = 0; i < arr.length; i = i + num) {
-    sliced.push(arr.slice(i, i + num));
+const baseArray = [1, 2, 3, 4, 5];
+const sliceBy = 2;
+
+function sliceArray(array, sliceBy) {
+  const slicedArray = new Array();
+  for (let i = 0; i < array.length; i = i + sliceBy) {
+    slicedArray.push(array.slice(i, i + sliceBy));
   }
-  return sliced;
+  return slicedArray;
 }
 
-const response = sliceArr([1, 2, 3, 4, 5], 2);
+const response = sliceArr(baseArray, sliceBy);
 
 console.log(response);
